@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: k8-demo
+spec:
+  selector:
+    matchLabels:
+     app: k8-demo
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: k8-demo
+    spec:
+      containers:
+        - name: k8-demo
+          image: sreeni72/k8-demo
+          ports:
+            - containerPort: 8081
+              protocol: TCP

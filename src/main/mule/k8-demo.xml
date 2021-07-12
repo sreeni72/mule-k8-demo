@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns:http="http://www.mulesoft.org/schema/mule/http" xmlns="http://www.mulesoft.org/schema/mule/core"
+	xmlns:doc="http://www.mulesoft.org/schema/mule/documentation"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd">
+	<http:listener-config name="HTTP_Listener_config" doc:name="HTTP Listener config" doc:id="521730cf-5fc4-4018-87db-f896839f44c1" >
+		<http:listener-connection host="0.0.0.0" port="8081" />
+	</http:listener-config>
+	<flow name="k8-demoFlow" doc:id="e6f83fbb-dbd6-46f2-82ae-4d899f5ce13e" >
+		<http:listener doc:name="Listener" doc:id="825372bf-b987-4da5-9ffd-5e913a7514d2" config-ref="HTTP_Listener_config" path="/k8demo"/>
+		<set-payload value="MuleSoft Containerization with MiniKube - Demo 1" doc:name="Set Payload" doc:id="f4032509-e531-4b24-acd3-f12e3cd283f7" />
+	</flow>
+</mule>
