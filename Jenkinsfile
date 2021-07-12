@@ -16,12 +16,12 @@ pipeline {
         docker_image = ""        
     }
     stages {
-		/**stage("CheckOut") {
+		stage("CheckOut") {
 			steps {
 				echo "Checkout the Code Repository..."
 				git  branch: "master", credentialsId: "git.credentials", url: "https://github.com/sreeni72/mule-k8-demo.git"
 			}
-		}**/
+		}
 		stage("Load Configuration") {
 			steps {
 				echo "Load Configuration..."
